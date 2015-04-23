@@ -1,17 +1,17 @@
 {
-  "name": "webApp",
+  "name": "markIt",
   "version": "0.0.1",
-  "description": "Web App to check or review sentiment for sentences",
+  "description": "A better way of mapping useful data",
   "main": "server.js",
   "keywords": [
-    "naive",
-    "bayes",
-    "sentiment",
-    "opinion"
+    "map",
+    "share",
+    "search",
+    "links"
   ],
-  "author": "Ranjith Kumar",
+  "author": "Ranjith Kumar, PPM Tech",
   "dependencies": {
-    "mongoose": "^3.8.21",
+    "mongoose": "*",
 	"body-parser": "~1.0.0",
     "express": "~4.0.0",
 	"express-session": "latest",
@@ -25,6 +25,8 @@
     "grunt-express-server": "latest",
     "grunt-mocha-test": "^0.12.7",
     "grunt-ng-annotate": "latest",
-    "mocha": "^2.1.0"
+	"morgan": "^1.5.1",
+    "winston": "^0.8.3",
+	"supertest": "^0.15.0"
   }
 }

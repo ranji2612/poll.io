@@ -1,0 +1,11 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>ppmtech</ShortName>
+<Description>Look up on Bazinga</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image width="16" height="16" type="image/x-icon">http://ppmtech.idc.oracle.com/faviconBlue.png</Image>
+<Tags>ppmtech</Tags>
+<Contact>ppm_tech_grp@oracle.com</Contact>
+<Url type="text/html" template="http://ppmtech.idc.oracle.com/search?q={searchTerms}"/>
+<moz:SearchForm>http://ppmtech.idc.oracle.com/search</moz:SearchForm>
+<Url type="application/opensearchdescription+xml" rel="self" template="http://ppmtech.idc.oracle.com/opensearch/description.xml"/>
+</OpenSearchDescription>

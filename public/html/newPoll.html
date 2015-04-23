@@ -1,0 +1,47 @@
+<div class="container">
+	<br/>
+	<div class="row">
+		<div class="col-sm-8  col-sm-offset-2">
+			<div class="panel">
+				<div class="panel-header"><strong><h3>Add a new Poll</h3></strong></div>
+				<div class="panel-body ">
+					<div class="container-fluid">
+						<div class="row">
+							<p>Title</p>
+							<input type="text" class="input form-control" ng-model="newPollTitle"/>
+							<br/><br/>
+							Add Choices to the question... 
+						</div>
+						<br/><br/>
+						
+						<div class="row" ng-repeat = "choice in choiceListCount">
+							<div class="col-sm-1">
+
+							</div>
+							<div class="col-sm-10 ">
+								<input type="text" class="input-large input form-control" ng-model="choiceList[choice]"/>
+								<!-- <span class="glyphicon glyphicon-check btn-large btn "></span> -->
+							</div>
+							<br/>
+						</div>
+						<br/>
+						<div class="row" ng-show="errorMessage"><div class="col-sm-10 col-sm-offset-1 alert alert-warning" >
+							{{errorMessage}}<br/>
+						</div></div>
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1">
+								<button class="col-sm-12 btn btn-large btn-primary" ng-click="addChoice()">Add a choice</button>
+							</div>
+						</div>
+						<br/><br/>
+						<div class="row">
+							<button class="col-sm-12 btn btn-large btn-primary" ng-click="publishPoll()">Publish Poll</button>
+						</div>
+					
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

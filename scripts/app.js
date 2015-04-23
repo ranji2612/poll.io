@@ -3,16 +3,20 @@ var app = angular.module('mainApp', ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-	.when('/', {
-		  templateUrl	:	'html/index.html',
-		  controller	:	'indexCtrl'
+	.when('/new', {
+		  templateUrl	:	'html/newPoll.html',
+		  controller	:	'newPollCtrl'
 	})
-	.when('/poll/:pid', {
-		  templateUrl	:	'html/poll.html',
-		  controller	:	'pollCtrl'
+	.when('/poll/:id', {
+		  templateUrl	:	'html/showPoll.html',
+		  controller	:	'showPollCtrl'
+	})
+	.when('/search', {
+		  templateUrl	:	'html/searchPoll.html',
+		  controller	:	'searchPollCtrl'
 	})
 	.otherwise({
-		  redirectTo	: '/'
+		  redirectTo	: '/search'
 	});
 	// use the HTML5 History API
 	$locationProvider.html5Mode(true);
@@ -22,17 +26,6 @@ app.config(function ($routeProvider, $locationProvider) {
 app.controller('homeCtrl', function ($scope,$http,$location) {
 	
     
-	//For menu
-	$scope.gotoHome =function() {
-		$scope.menuButtonClick(0);
-		$location.path('/home');
-	};
-	$scope.menuBarButton=['menuSelected','',''];
-	$scope.menuButtonClick = function(a) {
-		
-		$scope.menuBarButton=["","",""];
-		$scope.menuBarButton[a]="menuSelected";
-	};
-	
 });
+
 

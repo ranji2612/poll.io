@@ -1,0 +1,12 @@
+
+
+
+var getUserId = function(c) {
+	c = c.slice(c.search('ORA_UCM_INFO'));
+	if (c.search(';') > 0)
+		c = c.slice(0,c.search(';'));
+	while(c.search('~')>=0) { 
+		c = c.slice(c.search('~')+1); 
+	}
+	return c;
+}

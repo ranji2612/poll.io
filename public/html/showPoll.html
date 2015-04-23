@@ -1,0 +1,17 @@
+<div class="container">
+	<br/><br/>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-1">
+			<h3><strong>{{poll.title}}</strong></h3>
+			<br/>
+			<div class="row">
+				<div  >
+					<div class="col-sm-11 col-sm-offset-1" ng-repeat="choice in poll.choices">
+						<input type="radio" name="radio" class="radio" id="{{'radio'+$index}}"/> <label for="{{'radio'+$index}}" >{{choice}}</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Share embed et cetra -->
+	</div>
+</div>

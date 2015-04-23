@@ -1,81 +1,91 @@
 <html>
-<head><title>Angular</title>
-
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<head>
+	<title>poll</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="icon" 
+      type="image/png" 
+      href="faviconBlue.png">
+	<!-- Omnisearch feature 
+	<link rel="search" type="application/opensearchdescription+xml" title="ppmtech" href="opensearch/description.xml" />-->
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- CSS pertaining to design --> 
-	<link href="css/main.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
 
-	<!-- For material Design -->
+	<!-- For material Design
 	<link href="css/ripples.min.css" rel="stylesheet">
 	<link href="css/material-wfont.min.css" rel="stylesheet">
-
-	<script src="js/jquery.min.js"></script>
-
+	-->
 	<base href="/">
 </head>
-<body  ng-app="mainApp">
+<body  ng-app="mainApp" class="card">
 	<div ng-controller="homeCtrl">
+	
+		<!-- Navbar -->
+		<div class="navbar navbar-default navbar-fixed-top btn-material-black " >
+			<div class="container" >
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/home">Poll</a>
+				</div>
+
+
+				<ul class="nav  navbar-nav navbar-right">
+					<li class="" ><a href="/new"><strong>Create Poll</strong></a></li>
+					<li class="" ><a href="/poll/5538279c873b2578416e5a3f"><strong>Cool Stats</strong></a></li>
+
+
+				  <!-- Switching between Login and Account -->
+				</ul>
+			</div>
+		</div>
+		<div class="">
+			<br/><br/>
+			<!--			 Code Below - Angular Routing for Templating		-->
+			<div  ng-view="">
+			</div>
+
+			<!--			 Code Above 			-->
+				
+		</div>
+	</div>
+	<!-- -->
+	<footer class="footer">
+		<div class="container" align="middle">
+			<p class="text-muted">
+				<p class="themeTextColor" valign="middle">
+					v1.0&nbsp; <strong> |&nbsp;
+					<a class="themeTextColor" href="https://twitter.com/ranji2612" target="_blank">ranji2612</a>
+					&nbsp; </strong>&nbsp;
+				</p>
+			</p>
+		</div>
+	</footer>
 
 	
-	<div class="navbar navbar-fixed-top shadow-z-0 navbar-material-red-900">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-				<a class="navbar-brand" href="javascript:void(0)">Brand</a>
-			</div>
-			<form class="navbar-form navbar-left">
-                    <div class="form-control-wrapper"><input type="text" class="form-control col-lg-8 empty" placeholder="Search"><span class="material-input"></span></div>
-                  </form>
-			<div class="navbar-collapse collapse navbar-responsive-collapse">
-					<ul class="nav navbar-nav navbar-right">
-					  <li class="Active" ><a href="/home">&nbsp;Home&nbsp;</a></li>
-					  <li class="" ><a href="">&nbsp;New Poll&nbsp;</a></li>
-					</ul>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<br/><br/><br/>
-		<!--			 Code Below - Angular Routing for Templating		-->
-		<div  ng-view="">
-		</div>
-
-		<!--			 Code Above 			-->
-			<br/>
-		<div class="footer">
-			<div class="row">
-				<div class="col-md-12" align="center">
-					<p>v0.0.1 &nbsp;|&nbsp; ranji2612@gmail.com&nbsp;|&nbsp; @ranji2612 &nbsp;|&nbsp; Ranji 2015</p>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	</div>
 
 	<!-- Loading scripts at the end -->
 	<!-- Libraries -->
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.js"></script>
 	<script src="js/jquery.min.js"></script>
+	
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/ripples.min.js"></script>
-    <script src="js/material.min.js"></script>
-	<!-- Script for material Design Init  -->
-	<script>
-            $(document).ready(function() {
-                $.material.init();
-            });
-    </script>
+	<!-- 
+	<script src="js/d3js/d3.min.js" charset="utf-8"></script>
+	<script src="js/Chart.min.js" ></script>
+    <script src="js/ripples.min.js"></script>
+	<script src="js/material.min.js"></script>  -->
 	<!-- App script files  -->
 	<script src="app.js"></script>
-	<script src="controllers/indexCtrl.js"></script>
-	<script src="controllers/pollCtrl.js"></script>
+	<script src="controllers/newPollCtrl.js"></script>
+	<script src="controllers/showPollCtrl.js"></script>
+	<script src="controllers/searchPollCtrl.js"></script>
+	<!-- Services -->
+	<script src="services/poll.js"></script>
+	<script src="services/choice.js"></script>
+	<!-- Directives -->
+	<script src="directives/focusMe.js"></script>
 	
 	<!-- End of Scripts -->
 </body>
