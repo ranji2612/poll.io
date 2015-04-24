@@ -11,7 +11,7 @@ var ObjectId 	= mongoose.Types.ObjectId;
 
 // /api/choices/
 router.post('/addChoice', function(req, res) {
-	console.log(req.body.choiceArray);
+	
 	choiceList.collection.insert(req.body.choiceArray, function(err, data) {
 		if(err)
 			console.log(err);

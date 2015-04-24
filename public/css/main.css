@@ -170,10 +170,14 @@ input.radio:focus ~ label:before {
 /* MAIN POSTS PAGE */
 
 .url {
-  font-weight: normal;
   color:#999;
+  font-family: sans-serif;
   font-size:11px;
-  
+}
+strong.url {
+	font-weight: bold;
+	color : #888;
+	font-size:12px;
 }
 
 .searchresult {

@@ -14,7 +14,10 @@ var ObjectId 	= mongoose.Types.ObjectId;
 //Adding a new link
 router.post('/addNew', function( req, res) {
 	var keywords = req.body.title.toLowerCase().replace(/[:\.,!@#$%^&*()_=]/g,' ').match(/\S+/g).sort();
-	pollList.create({ title: req.body.title, keyw : keywords, choices: req.body.choices, views: 1, cd : Date.now() }, function(err,data) {
+	var user = req.body.user;
+	if(typeof(user)=="undefined" || user.trimLeft().length ===0) user = "Anonymous";
+	
+	pollList.create({ title: req.body.title, keyw : keywords, choices: req.body.choices, user : user, views: 1, cd : Date.now() }, function(err,data) {
 		if(err)
 			console.log(err);
 		res.send(data._id);
@@ -48,6 +51,15 @@ router.get('/:id', function(req, res) {
 		if(err)
 			console.log(err);
 		res.json(data);
+	});
+});
+
+//Increment the view parameter for the poll
+router.get('/inc/:id', function(req, res) {
+	pollList.update({_id : ObjectId(req.params.id) }, { $inc : {views : 1}} , function(err, data) {
+		if(err)
+			console.log(err);
+		res.send(200);
 	});
 });
 module.exports = router;

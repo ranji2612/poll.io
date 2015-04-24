@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 var dbSchema = new Schema({
 	'title'		: String,
+	'user'		: String,
 	'keyw'		: Array,
 	'choices'	: Array,
 	'views'		: Number,

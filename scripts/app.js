@@ -12,8 +12,9 @@ app.config(function ($routeProvider, $locationProvider) {
 		  controller	:	'showPollCtrl'
 	})
 	.when('/search', {
-		  templateUrl	:	'html/searchPoll.html',
-		  controller	:	'searchPollCtrl'
+		  templateUrl		:	'html/searchPoll.html',
+		  controller		:	'searchPollCtrl',
+		  reloadOnSearch 	: false
 	})
 	.otherwise({
 		  redirectTo	: '/search'

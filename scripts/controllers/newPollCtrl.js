@@ -33,7 +33,7 @@ app.controller('newPollCtrl', function ($scope, $location, Poll, Choice) {
 	
 	//Publishing new Poll
 	$scope.publishPoll = function() {
-		var formData = {title: $scope.newPollTitle, choices : $scope.choiceList};
+		var formData = {title: $scope.newPollTitle, choices : $scope.choiceList, user:$scope.user};
 		if ($scope.validateFormData(formData)) {
 			Poll.addNew(formData)
 			.success( function(data) {

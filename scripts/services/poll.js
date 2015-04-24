@@ -9,6 +9,9 @@ app.factory('Poll',function($http) {
 		},
 		search : function(query) {
 			return $http.get('/api/poll/search/'+query);
+		},
+		incView : function(id) {
+			return $http.get('/api/poll/inc/'+id);
 		}
 	};
 	

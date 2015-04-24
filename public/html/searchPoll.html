@@ -14,8 +14,14 @@
 		</form>
 	</div>
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1" ng-repeat="result in results">
-			{{result.title}} <br/>
+		<br/><br/>
+		<div class="col-sm-10 col-sm-offset-1" ng-repeat="result in results | orderBy : ['views','cd'] : ['reverse','reverse']">
+			<div class="">
+				<strong><a class="themeTextColor resultLink" href="{{'/poll/' + result._id}}" target="_blank" ng-click="upRank(result._id, $index, result.title)">{{result.title}}</a>
+					&nbsp;&nbsp;<span class="url">{{result.cd | date}}</span>
+				</strong>
+			</div>
+			<div class="url" style="font-weight:bold;"><strong class="url">{{result.user}}</strong> &nbsp;&nbsp;-&nbsp;&nbsp; <strong class="url">{{result.views}}</strong> views</div> <br/>
 		</div>
 	</div>
 </div>
