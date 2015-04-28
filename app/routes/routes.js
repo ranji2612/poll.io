@@ -12,6 +12,8 @@ module.exports = function(app, passport) {
 	app.use('/api/poll', require('./api/poll'));
 	app.use('/api/choice', require('./api/choice'));
 	
+	//For embed docs
+	app.use('/embed', require('./embed'));
 	
 	// Load the home page for others apart from api
 	//404 handled at UI routing

@@ -19,6 +19,14 @@ app.controller('newPollCtrl', function ($scope, $location, Poll, Choice) {
 		console.log($scope.choiceList);
 	};
 	
+	//Clicking the input choice
+	$scope.clickChoiceField = function(n) {
+		console.log($scope.choiceList[n]);
+		if ((typeof($scope.choiceList[n])=="undefined" || $scope.choiceList[n].length===0) && ($scope.choiceListCount.length == n+1)) {
+			$scope.choiceListCount.push($scope.choiceListCount.length);
+		};
+	};
+	
 	//Validating poll data - before publishing
 	$scope.validateFormData = function(data) {
 		$scope.errorMessage = '';
@@ -43,7 +51,7 @@ app.controller('newPollCtrl', function ($scope, $location, Poll, Choice) {
 				var i, t = Date.now(), choiceListInsertion = [];
 				
 				for(i in $scope.choiceList) {
-					choiceListInsertion.push( { pollId : data, choice : $scope.choiceList[i], votes : 0, lastUpd : t } );
+					choiceListInsertion.push( { pollId : data.slice(1,-1), choice : $scope.choiceList[i], votes : 0, lastUpd : t } );
 				}
 				Choice.addChoices(choiceListInsertion)
 				.success( function(data) {

@@ -1,6 +1,6 @@
 //'use strict';
 
-//Current rate collection
+//Poll collection
 var pollList  = require('./poll.model');
 
 var express = require('express');

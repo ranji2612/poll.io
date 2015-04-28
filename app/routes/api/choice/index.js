@@ -19,4 +19,14 @@ router.post('/addChoice', function(req, res) {
 	});
 });
 
+//Cast a vote
+router.get('/vote/:pollId/:choice', function(req,res) {
+	choiceList.update({pollId :req.params.pollId, choice : req.params.choice}, { $inc : {votes : 1} }, function(err, data) {
+		if(err) res.send(err);
+		if(data.length===0)
+			console.log('error with choice vote'+req.params.pollId+' '+req.params.choice);
+		console.log(data);
+		res.send(200);
+	});
+});
 module.exports = router;

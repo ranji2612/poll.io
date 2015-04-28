@@ -19,7 +19,7 @@
 
 							</div>
 							<div class="col-sm-10 ">
-								<input type="text" class="input-large input form-control" ng-model="choiceList[choice]"/>
+								<input type="text" class="input-large input form-control" ng-model="choiceList[choice]" ng-focus="clickChoiceField(choice)"/>
 								<!-- <span class="glyphicon glyphicon-check btn-large btn "></span> -->
 							</div>
 							<br/>
@@ -28,11 +28,13 @@
 						<div class="row" ng-show="errorMessage"><div class="col-sm-10 col-sm-offset-1 alert alert-warning" >
 							{{errorMessage}}<br/>
 						</div></div>
+						<!--
 						<div class="row">
 							<div class="col-sm-10 col-sm-offset-1">
 								<button class="col-sm-12 btn btn-large btn-primary" ng-click="addChoice()">Add a choice</button>
 							</div>
 						</div>
+						-->
 						<br/><br/>
 						<div class="row">
 							<div class="col-sm-12">
