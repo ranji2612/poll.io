@@ -1,7 +1,7 @@
 {
-  "name": "markIt",
+  "name": "poll.io",
   "version": "0.0.1",
-  "description": "A better way of mapping useful data",
+  "description": "Poll made simple",
   "main": "server.js",
   "keywords": [
     "map",
@@ -9,7 +9,7 @@
     "search",
     "links"
   ],
-  "author": "Ranjith Kumar, PPM Tech",
+  "author": "Ranjith Kumar @ranji2612",
   "dependencies": {
     "mongoose": "*",
 	"body-parser": "~1.0.0",

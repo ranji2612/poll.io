@@ -24,7 +24,7 @@ app.controller('newPollCtrl', function ($scope, $location, Poll, Choice) {
 		console.log($scope.choiceList[n]);
 		if ((typeof($scope.choiceList[n])=="undefined" || $scope.choiceList[n].length===0) && ($scope.choiceListCount.length == n+1)) {
 			$scope.choiceListCount.push($scope.choiceListCount.length);
-		};
+		}
 	};
 	
 	//Validating poll data - before publishing
