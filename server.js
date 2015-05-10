@@ -26,6 +26,6 @@ require('./app/routes/routes.js')(app);
 
 
 //Start the awesomeness
-app.listen(process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1', port ,function() {	
+app.listen( port ,function() {	
 	console.log('Magic happens on port ',port); 
 });
